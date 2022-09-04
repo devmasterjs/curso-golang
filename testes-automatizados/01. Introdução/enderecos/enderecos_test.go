@@ -1,6 +1,13 @@
-package enderecos
+package enderecos_test
 
-import "testing"
+// go test ./... --coverprofile cobertura.txt
+// go tool cover --func=cobertura.txt
+// go tool cover --html=cobertura.txt
+
+import (
+	. "introducao-testes/enderecos"
+	"testing"
+)
 
 type cenarioDeTeste struct {
 	enderecoInserido string
@@ -8,6 +15,8 @@ type cenarioDeTeste struct {
 }
 
 func TestTipoDeEndereco(t *testing.T) {
+	t.Parallel()
+
 	// given
 	cenariosDeTeste := []cenarioDeTeste{
 		{"Rua ABC", "Rua"},
@@ -28,4 +37,8 @@ func TestTipoDeEndereco(t *testing.T) {
 		}
 	}
 
+}
+
+func TipoDeEndereco(s string) {
+	panic("unimplemented")
 }
